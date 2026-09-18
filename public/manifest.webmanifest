@@ -1,0 +1,10 @@
+{
+  "name": "AV360 Vet+",
+  "short_name": "AV360",
+  "description": "Smart Animal Health Monitoring over BLE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": []
+}

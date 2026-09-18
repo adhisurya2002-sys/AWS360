@@ -1,0 +1,181 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AV360 Vet+ design system — dark by default, neon green/blue accents.
+ * Semantic tokens only. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-neon: var(--neon);
+  --color-neon-foreground: var(--neon-foreground);
+  --color-cyan: var(--cyan);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-neutral: var(--neutral);
+
+  --color-chart-hr: var(--chart-hr);
+  --color-chart-spo2: var(--chart-spo2);
+  --color-chart-temp: var(--chart-temp);
+}
+
+@import "leaflet/dist/leaflet.css";
+
+/*
+ * AVS 360 Veterinary Health & Surveillance Design System
+ * Enterprise pure white clinical baseline with Royal Indigo primary branding.
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(1 0 0); /* Pure White #ffffff */
+  --foreground: oklch(0.2 0.03 260); /* Slate 900 #0f172a */
+
+  --card: oklch(1 0 0); /* Pure White Card */
+  --card-foreground: oklch(0.2 0.03 260);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 260);
+
+  --primary: oklch(0.5 0.24 270); /* Royal Indigo #4f46e5 (matches official shield) */
+  --primary-foreground: oklch(1 0 0); /* Pure White text */
+
+  --secondary: oklch(0.96 0.02 260); /* Slate 100 #f1f5f9 */
+  --secondary-foreground: oklch(0.3 0.05 260); /* Slate 800 */
+
+  --muted: oklch(0.97 0.01 250); /* Slate 50 #f8fafc */
+  --muted-foreground: oklch(0.55 0.02 250); /* Slate 500 #64748b */
+
+  --accent: oklch(0.95 0.04 270); /* Soft Indigo #e0e7ff */
+  --accent-foreground: oklch(0.35 0.2 270); /* Deep Indigo #3730a3 */
+
+  --destructive: oklch(0.6 0.22 25); /* Rose 600 #e11d48 */
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.01 250); /* Slate 200 #e2e8f0 */
+  --input: oklch(0.9 0.01 250); /* Slate 200 #e2e8f0 */
+  --ring: oklch(0.5 0.24 270); /* Indigo 600 */
+
+  --neon: oklch(0.5 0.24 270); /* Mapped to royal indigo */
+  --neon-foreground: oklch(1 0 0);
+  --cyan: oklch(0.55 0.18 240);
+
+  --success: oklch(0.6 0.18 150); /* Emerald 600 #059669 */
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.7 0.18 70); /* Amber 600 #d97706 */
+  --warning-foreground: oklch(1 0 0);
+  --danger: oklch(0.6 0.22 25); /* Rose 600 #e11d48 */
+  --danger-foreground: oklch(1 0 0);
+  --neutral: oklch(0.6 0.02 250);
+
+  --chart-hr: oklch(0.6 0.22 25);
+  --chart-spo2: oklch(0.55 0.18 240);
+  --chart-temp: oklch(0.7 0.18 70);
+
+  --shadow-neon: 0 4px 14px 0 rgba(79, 70, 229, 0.25);
+  --shadow-cyan: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  /* same as :root — app is dark-first */
+  --background: oklch(0.16 0.02 250);
+  --foreground: oklch(0.97 0.01 230);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family:
+      "SF Pro Display",
+      "Inter",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+    min-height: 100dvh;
+  }
+}
+
+@layer utilities {
+  .text-glow-neon {
+    text-shadow: 0 0 16px color-mix(in oklab, var(--neon) 60%, transparent);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 16px color-mix(in oklab, var(--cyan) 60%, transparent);
+  }
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  .shadow-cyan {
+    box-shadow: var(--shadow-cyan);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .font-display {
+    font-feature-settings: "tnum", "ss01";
+    letter-spacing: -0.02em;
+  }
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--neon) 60%, transparent);
+    }
+    70% {
+      box-shadow: 0 0 0 16px color-mix(in oklab, var(--neon) 0%, transparent);
+    }
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--neon) 0%, transparent);
+    }
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
